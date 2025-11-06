@@ -6,17 +6,17 @@ This directory contains all testing-related documentation, test plans, and test 
 
 ```
 test/
-├── README.md                    # This file
-├── test-plan.md                 # Comprehensive test plan
-├── test-cases.md                # Detailed test cases
-├── test-results/                # Test execution results
-│   ├── unit-test-results.md
-│   ├── integration-test-results.md
-│   └── performance-test-results.md
-└── test-data/                   # Test-specific data files
-    ├── sample-valid.csv
-    ├── sample-invalid.csv
-    └── sample-edge-cases.json
+ README.md # This file
+ test-plan.md # Comprehensive test plan
+ test-cases.md # Detailed test cases
+ test-results/ # Test execution results
+ unit-test-results.md
+ integration-test-results.md
+ performance-test-results.md
+ test-data/ # Test-specific data files
+ sample-valid.csv
+ sample-invalid.csv
+ sample-edge-cases.json
 ```
 
 ## Testing Strategy
@@ -25,25 +25,25 @@ test/
 - **Framework**: JUnit 5 + Mockito
 - **Coverage Target**: 80%+ line coverage
 - **Focus Areas**:
-  - Data readers (CSV, JSON, Fixed-width)
-  - Transaction normalizer
-  - Repository/DAO operations
-  - Validation logic
+ - Data readers (CSV, JSON, Fixed-width)
+ - Transaction normalizer
+ - Repository/DAO operations
+ - Validation logic
 
 ### 2. Integration Testing
 - **Framework**: Testcontainers + PostgreSQL
 - **Focus Areas**:
-  - End-to-end data ingestion pipeline
-  - Database connectivity
-  - Transaction management
-  - Flyway migrations
+ - End-to-end data ingestion pipeline
+ - Database connectivity
+ - Transaction management
+ - Flyway migrations
 
 ### 3. Performance Testing
 - **Tools**: JMH (Java Microbenchmark Harness)
 - **Metrics**:
-  - Data ingestion throughput (records/second)
-  - Memory usage patterns
-  - Database connection pool efficiency
+ - Data ingestion throughput (records/second)
+ - Memory usage patterns
+ - Database connection pool efficiency
 
 ## Test Execution
 

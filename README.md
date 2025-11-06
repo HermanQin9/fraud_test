@@ -1,4 +1,4 @@
-# 🏦 Banking Platform Data Migration & Normalization Engine
+# Banking Platform Data Migration & Normalization Engine
 
 [![Java](https://img.shields.io/badge/Java-21-orange.svg)](https://www.oracle.com/java/)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-blue.svg)](https://www.postgresql.org/)
@@ -8,55 +8,55 @@
 
 > **Enterprise-grade ETL pipeline for migrating transaction data from multiple banking platforms into cloud-based PostgreSQL — demonstrating data normalization, ingestion, and AWS integration capabilities.**
 
-## 📋 Project Overview
+## Project Overview
 
 This project demonstrates **enterprise banking platform data migration capabilities** with a focus on **ETL pipeline engineering**. It showcases the ability to extract, normalize, and load transaction data from multiple banking systems with different formats into a centralized cloud-based PostgreSQL database.
 
-### 🎯 Key Objectives
+### Key Objectives
 
-- ✅ Implement **multi-source data ingestion** from diverse banking platforms
-- ✅ Demonstrate **data normalization and standardization** across inconsistent schemas
-- ✅ Showcase **AWS cloud integration** (RDS PostgreSQL, S3)
-- ✅ Build **high-performance ETL pipelines** with Java and Unix utilities
-- ✅ Apply **enterprise-grade data engineering practices** with comprehensive testing
-
----
-
-## 🏗️ System Architecture
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│           Data Sources (CSV, JSON, Legacy Systems)           │
-└────────────────────────┬────────────────────────────────────┘
-                         │
-                         ▼
-┌─────────────────────────────────────────────────────────────┐
-│                 Data Ingestion Layer (Java)                  │
-│  • FileDataReader  • S3DataReader  • DataValidator          │
-└────────────────────────┬────────────────────────────────────┘
-                         │
-                         ▼
-┌─────────────────────────────────────────────────────────────┐
-│              Normalization Layer (Java)                      │
-│  • TransactionNormalizer  • SchemaValidator                  │
-└────────────────────────┬────────────────────────────────────┘
-                         │
-                         ▼
-┌─────────────────────────────────────────────────────────────┐
-│          PostgreSQL Database (AWS RDS / Local)               │
-│  • Optimized schema  • Indexes  • Migrations (Flyway)       │
-└────────────────────────┬────────────────────────────────────┘
-                         │
-                         ▼
-┌─────────────────────────────────────────────────────────────┐
-│          Fraud Detection Engine & Analytics                  │
-│  • Rule-based detection  • Anomaly detection  • Reports     │
-└─────────────────────────────────────────────────────────────┘
-```
+- Implement **multi-source data ingestion** from diverse banking platforms
+- Demonstrate **data normalization and standardization** across inconsistent schemas
+- Showcase **AWS cloud integration** (RDS PostgreSQL, S3)
+- Build **high-performance ETL pipelines** with Java and Unix utilities
+- Apply **enterprise-grade data engineering practices** with comprehensive testing
 
 ---
 
-## 🚀 Key Features
+## System Architecture
+
+```
+
+ Data Sources (CSV, JSON, Legacy Systems) 
+
+ 
+ 
+
+ Data Ingestion Layer (Java) 
+ • FileDataReader • S3DataReader • DataValidator 
+
+ 
+ 
+
+ Normalization Layer (Java) 
+ • TransactionNormalizer • SchemaValidator 
+
+ 
+ 
+
+ PostgreSQL Database (AWS RDS / Local) 
+ • Optimized schema • Indexes • Migrations (Flyway) 
+
+ 
+ 
+
+ Fraud Detection Engine & Analytics 
+ • Rule-based detection • Anomaly detection • Reports 
+
+```
+
+---
+
+## Key Features
 
 ### 1. **Enterprise Data Migration**
 - Import data from multiple formats (CSV, JSON, XML)
@@ -101,7 +101,7 @@ This project demonstrates **enterprise banking platform data migration capabilit
 
 ---
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 ### Core Technologies
 - **Java 17** (LTS) - Primary programming language
@@ -144,38 +144,38 @@ This project demonstrates **enterprise banking platform data migration capabilit
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 BankFraudTest/
-├── src/
-│   ├── main/
-│   │   ├── java/com/bankfraud/
-│   │   │   ├── ingestion/          # Data import modules
-│   │   │   ├── normalization/      # Data standardization
-│   │   │   ├── model/              # Domain models
-│   │   │   ├── repository/         # Data access layer
-│   │   │   ├── detection/          # Fraud detection engine
-│   │   │   ├── analytics/          # Reporting and analytics
-│   │   │   ├── aws/                # AWS integration
-│   │   │   └── util/               # Utilities
-│   │   ├── resources/
-│   │   │   ├── application.properties
-│   │   │   └── db/migration/       # Flyway SQL scripts
-│   │   └── scripts/                # Unix shell scripts
-│   └── test/                       # Unit and integration tests
-├── data/
-│   ├── sample/                     # Sample datasets
-│   └── raw/                        # Raw data files
-├── docs/                           # Documentation
-├── docker/                         # Docker configurations
-├── pom.xml                         # Maven configuration
-└── PROJECT_PLAN.md                 # Detailed implementation plan
+ src/
+ main/
+ java/com/bankfraud/
+ ingestion/ # Data import modules
+ normalization/ # Data standardization
+ model/ # Domain models
+ repository/ # Data access layer
+ detection/ # Fraud detection engine
+ analytics/ # Reporting and analytics
+ aws/ # AWS integration
+ util/ # Utilities
+ resources/
+ application.properties
+ db/migration/ # Flyway SQL scripts
+ scripts/ # Unix shell scripts
+ test/ # Unit and integration tests
+ data/
+ sample/ # Sample datasets
+ raw/ # Raw data files
+ docs/ # Documentation
+ docker/ # Docker configurations
+ pom.xml # Maven configuration
+ PROJECT_PLAN.md # Detailed implementation plan
 ```
 
 ---
 
-## 🚦 Quick Start
+## Quick Start
 
 ### Prerequisites
 - **Java 17** or higher
@@ -187,30 +187,30 @@ BankFraudTest/
 ### Installation
 
 1. **Clone the repository**
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/BankFraudTest.git
-   cd BankFraudTest
-   ```
+ ```bash
+ git clone https://github.com/YOUR_USERNAME/BankFraudTest.git
+ cd BankFraudTest
+ ```
 
 2. **Start PostgreSQL database (Docker)**
-   ```bash
-   docker-compose up -d
-   ```
+ ```bash
+ docker-compose up -d
+ ```
 
 3. **Build the project**
-   ```bash
-   mvn clean install
-   ```
+ ```bash
+ mvn clean install
+ ```
 
 4. **Run database migrations**
-   ```bash
-   mvn flyway:migrate
-   ```
+ ```bash
+ mvn flyway:migrate
+ ```
 
 5. **Run the application**
-   ```bash
-   mvn exec:java -Dexec.mainClass="com.bankfraud.Main"
-   ```
+ ```bash
+ mvn exec:java -Dexec.mainClass="com.bankfraud.Main"
+ ```
 
 ### Running Tests
 ```bash
@@ -223,7 +223,7 @@ mvn test jacoco:report
 
 ---
 
-## 📊 Database Schema
+## Database Schema
 
 ### Core Tables
 
@@ -252,7 +252,7 @@ mvn test jacoco:report
 
 ---
 
-## 🔄 Data Ingestion Pipeline
+## Data Ingestion Pipeline
 
 ### Supported Data Sources
 1. **Real Credit Card Transactions** - 24K+ real anonymized transactions
@@ -280,7 +280,7 @@ System.out.println("Imported: " + result.getSuccessCount() + " records");
 
 ---
 
-## 🛡️ Fraud Detection Rules
+## Fraud Detection Rules
 
 The system implements multiple detection strategies:
 
@@ -298,7 +298,7 @@ Risk Level = LOW (0-25) | MEDIUM (26-50) | HIGH (51-75) | CRITICAL (76-100)
 
 ---
 
-## ☁️ AWS Deployment
+## AWS Deployment
 
 ### AWS Services Used
 - **AWS RDS PostgreSQL** - Production database
@@ -318,19 +318,19 @@ aws.rds.database=frauddb
 
 ---
 
-## 📈 Performance Metrics
+## Performance Metrics
 
 | Metric | Target | Achieved |
 |--------|--------|----------|
-| Data Ingestion Rate | 1000 records/sec | ✅ TBD |
-| Query Response Time (p95) | < 100ms | ✅ TBD |
-| Import Error Rate | < 0.1% | ✅ TBD |
-| Test Coverage | > 80% | ✅ TBD |
-| Fraud Detection Accuracy | > 85% | ✅ TBD |
+| Data Ingestion Rate | 1000 records/sec | TBD |
+| Query Response Time (p95) | < 100ms | TBD |
+| Import Error Rate | < 0.1% | TBD |
+| Test Coverage | > 80% | TBD |
+| Fraud Detection Accuracy | > 85% | TBD |
 
 ---
 
-## 🧪 Testing Strategy
+## Testing Strategy
 
 ### Test Types
 - **Unit Tests** - Individual component testing
@@ -348,7 +348,7 @@ aws.rds.database=frauddb
 
 ---
 
-## 📚 Documentation
+## Documentation
 
 - **[PROJECT_PLAN.md](PROJECT_PLAN.md)** - Comprehensive implementation plan
 - **[docs/SETUP.md](docs/SETUP.md)** - Environment setup guide
@@ -358,57 +358,57 @@ aws.rds.database=frauddb
 
 ---
 
-## 🎯 Skills Demonstrated
+## Skills Demonstrated
 
 This project showcases the following technical competencies:
 
-✅ **Data Engineering**
+ **Data Engineering**
 - ETL pipeline design and implementation
 - Data normalization and validation
 - Multi-source data integration
 - Error handling and data quality
 
-✅ **Java Development**
+ **Java Development**
 - Object-oriented design principles
 - Design patterns (Repository, Factory, Strategy)
 - Concurrent programming
 - Exception handling and logging
 
-✅ **Database Engineering**
+ **Database Engineering**
 - PostgreSQL advanced features
 - Query optimization
 - Schema design and indexing
 - Database migrations (Flyway)
 
-✅ **Cloud Computing (AWS)**
+ **Cloud Computing (AWS)**
 - RDS database management
 - S3 object storage
 - AWS SDK integration
 - Cloud-native architecture
 
-✅ **DevOps & Testing**
+ **DevOps & Testing**
 - Unit and integration testing
 - Test-driven development (TDD)
 - Docker containerization
 - CI/CD readiness
 
-✅ **Unix/Linux**
+ **Unix/Linux**
 - Shell scripting
 - Data processing pipelines
 - Command-line tools (awk, sed)
 
 ---
 
-## 🎓 Data Sources
+## Data Sources
 
 This project uses **real-world financial datasets**:
 
 ### Primary Dataset
 - **Credit Card Transactions** (1.81 MB, 24K+ transactions)
-  - Real anonymized credit card transaction data
-  - Time period: 2002-2005
-  - Includes merchant details, amounts, fraud indicators
-  - Perfect size for demonstration and GitHub
+ - Real anonymized credit card transaction data
+ - Time period: 2002-2005
+ - Includes merchant details, amounts, fraud indicators
+ - Perfect size for demonstration and GitHub
 
 ### Additional Datasets
 - **Lending Club** - 2.2M+ real P2P loans (374 MB compressed)
@@ -419,7 +419,7 @@ All datasets are publicly available and properly anonymized.
 
 ---
 
-## 🗓️ Development Timeline
+## Development Timeline
 
 - **Week 1**: Infrastructure setup, data ingestion, normalization
 - **Week 2**: Database optimization, fraud detection, AWS integration
@@ -429,7 +429,7 @@ All datasets are publicly available and properly anonymized.
 
 ---
 
-## 🚧 Future Enhancements
+## Future Enhancements
 
 - [ ] Add Scala modules for advanced data processing
 - [ ] Implement machine learning models (Python integration)
@@ -441,13 +441,13 @@ All datasets are publicly available and properly anonymized.
 
 ---
 
-## 📝 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-## 👤 Author
+## Author
 
 **Your Name**
 - GitHub: [@YOUR_USERNAME](https://github.com/YOUR_USERNAME)
@@ -456,7 +456,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - Verafin for inspiring this project through their job posting
 - Kaggle community for fraud detection datasets
@@ -464,7 +464,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 📞 Contact
+## Contact
 
 For questions, feedback, or collaboration opportunities:
 - Open an issue on GitHub
@@ -473,23 +473,24 @@ For questions, feedback, or collaboration opportunities:
 
 ---
 
-**⭐ If you find this project useful, please consider giving it a star on GitHub!**
+** If you find this project useful, please consider giving it a star on GitHub!**
 
 ---
 
-### 🎯 How This Project Aligns with Job Requirements
+### How This Project Aligns with Job Requirements
 
 | Job Requirement | Project Demonstration |
 |----------------|----------------------|
-| **Data normalization and ingestion in AWS** | ✅ Complete ETL pipeline with S3/RDS integration |
-| **PostgreSQL expertise** | ✅ Advanced schema design, query optimization, migrations |
-| **Java development** | ✅ 100% Java codebase with modern practices |
-| **Scala (nice to have)** | 🔄 Can be added as extension module |
-| **Unix utilities** | ✅ Shell scripts for data preprocessing |
-| **Automated testing** | ✅ Comprehensive test suite with high coverage |
-| **Cloud-based environments** | ✅ AWS deployment-ready architecture |
-| **Financial technology** | ✅ Fraud detection in banking context |
+| **Data normalization and ingestion in AWS** | Complete ETL pipeline with S3/RDS integration |
+| **PostgreSQL expertise** | Advanced schema design, query optimization, migrations |
+| **Java development** | 100% Java codebase with modern practices |
+| **Scala (nice to have)** | Can be added as extension module |
+| **Unix utilities** | Shell scripts for data preprocessing |
+| **Automated testing** | Comprehensive test suite with high coverage |
+| **Cloud-based environments** | AWS deployment-ready architecture |
+| **Financial technology** | Fraud detection in banking context |
 
 ---
 
-**Built with ❤️ for enterprise-grade data engineering**
+**Built with for enterprise-grade data engineering**
+

@@ -2,35 +2,35 @@
 
 This directory contains real-world banking and financial transaction datasets used for demonstrating multi-source data migration and normalization capabilities.
 
-## 📁 Directory Structure
+## Directory Structure
 
 ```
 data/
-├── sample/                          # Small sample datasets (3 formats)
-│   ├── bank_a_transactions.csv      # CSV format (30 records)
-│   ├── bank_b_transactions.json     # JSON format (15 records)
-│   ├── bank_c_fixed_width.txt       # Fixed-width format (30 records)
-│   └── README.md                    # Sample data documentation
-│
-├── credit_card/                     # Real credit card transactions
-│   └── User0_credit_card_transactions.csv  (1.81 MB, ~24K transactions)
-│
-├── german_credit/                   # German credit approval data
-│   └── [German credit data files]
-│
-└── lending_club/                    # (To be extracted)
-    └── accepted_2007_to_2018Q4.csv.gz  (374 MB, 2.2M+ loans)
+ sample/ # Small sample datasets (3 formats)
+ bank_a_transactions.csv # CSV format (30 records)
+ bank_b_transactions.json # JSON format (15 records)
+ bank_c_fixed_width.txt # Fixed-width format (30 records)
+ README.md # Sample data documentation
+
+ credit_card/ # Real credit card transactions
+ User0_credit_card_transactions.csv (1.81 MB, ~24K transactions)
+
+ german_credit/ # German credit approval data
+ [German credit data files]
+
+ lending_club/ # (To be extracted)
+ accepted_2007_to_2018Q4.csv.gz (374 MB, 2.2M+ loans)
 ```
 
 ---
 
-## 📊 Available Datasets
+## Available Datasets
 
 ### 1. **Sample Multi-Format Data** (Generated)
-**Location**: `sample/`  
-**Purpose**: Demonstrate multi-source data ingestion from different banking systems  
-**Formats**: CSV, JSON, Fixed-width text  
-**Total Records**: 75 transactions  
+**Location**: `sample/` 
+**Purpose**: Demonstrate multi-source data ingestion from different banking systems 
+**Formats**: CSV, JSON, Fixed-width text 
+**Total Records**: 75 transactions 
 **Use Case**: Quick testing and development
 
 **Key Features**:
@@ -41,12 +41,12 @@ data/
 
 ---
 
-### 2. **Credit Card Transactions** ⭐ Real Data
-**Location**: `credit_card/User0_credit_card_transactions.csv`  
-**Source**: Real anonymized credit card transactions  
-**Size**: 1.81 MB  
-**Records**: ~24,000 transactions  
-**Time Period**: 2002-2005  
+### 2. **Credit Card Transactions** Real Data
+**Location**: `credit_card/User0_credit_card_transactions.csv` 
+**Source**: Real anonymized credit card transactions 
+**Size**: 1.81 MB 
+**Records**: ~24,000 transactions 
+**Time Period**: 2002-2005 
 
 **Schema**:
 ```
@@ -73,12 +73,12 @@ Errors?, Is Fraud?
 
 ---
 
-### 3. **Lending Club Loan Data** ⭐ Real Data (Large)
-**Location**: `accepted_2007_to_2018Q4.csv.gz`  
-**Source**: Lending Club - Real P2P lending platform data  
-**Size**: 374 MB (compressed), ~1.6 GB (uncompressed)  
-**Records**: 2.2M+ loans  
-**Time Period**: 2007-2018  
+### 3. **Lending Club Loan Data** Real Data (Large)
+**Location**: `accepted_2007_to_2018Q4.csv.gz` 
+**Source**: Lending Club - Real P2P lending platform data 
+**Size**: 374 MB (compressed), ~1.6 GB (uncompressed) 
+**Records**: 2.2M+ loans 
+**Time Period**: 2007-2018 
 
 **Schema**: 150+ columns including:
 - Loan amount, interest rate, term
@@ -93,7 +93,7 @@ Errors?, Is Fraud?
 - Data quality validation
 - Performance benchmarking
 
-**Note**: Large file - extract on demand  
+**Note**: Large file - extract on demand 
 ```bash
 # To extract (PowerShell):
 Expand-Archive -Path accepted_2007_to_2018Q4.csv.gz -DestinationPath lending_club/
@@ -101,11 +101,11 @@ Expand-Archive -Path accepted_2007_to_2018Q4.csv.gz -DestinationPath lending_clu
 
 ---
 
-### 4. **German Credit Data** ⭐ Real Data (Small)
-**Location**: `german_credit/`  
-**Source**: UCI Machine Learning Repository - Real credit approval data  
-**Size**: < 100 KB  
-**Records**: 1,000 credit applications  
+### 4. **German Credit Data** Real Data (Small)
+**Location**: `german_credit/` 
+**Source**: UCI Machine Learning Repository - Real credit approval data 
+**Size**: < 100 KB 
+**Records**: 1,000 credit applications 
 
 **Schema**: 20 attributes including:
 - Credit history
@@ -124,15 +124,15 @@ Expand-Archive -Path accepted_2007_to_2018Q4.csv.gz -DestinationPath lending_clu
 
 ---
 
-## 🎯 Data Migration Strategy
+## Data Migration Strategy
 
 ### Primary Dataset for Demo: Credit Card Transactions
 **Why**: 
-- ✅ Real data (most authentic)
-- ✅ Manageable size (1.81 MB)
-- ✅ Rich schema (15 fields)
-- ✅ Good for ETL demonstration
-- ✅ Can upload to GitHub
+- Real data (most authentic)
+- Manageable size (1.81 MB)
+- Rich schema (15 fields)
+- Good for ETL demonstration
+- Can upload to GitHub
 
 ### Conversion Plan:
 Transform `User0_credit_card_transactions.csv` into 3 formats:
@@ -149,7 +149,7 @@ This demonstrates:
 
 ---
 
-## 📝 Data Preparation Tasks
+## Data Preparation Tasks
 
 ### Phase 1: Extract and Clean
 - [x] Download datasets
@@ -171,40 +171,40 @@ This demonstrates:
 
 ---
 
-## 🔒 Data Privacy & Usage
+## Data Privacy & Usage
 
 ### Credit Card Data
-- ✅ Anonymized (no real PII)
-- ✅ Publicly available dataset
-- ✅ Safe for GitHub and demonstration
-- ⚠️ Do not use for actual fraud prevention
+- Anonymized (no real PII)
+- Publicly available dataset
+- Safe for GitHub and demonstration
+- Do not use for actual fraud prevention
 
 ### Lending Club Data
-- ✅ Official public release
-- ✅ Anonymized borrower information
-- ✅ Can be used for research/education
-- ⚠️ Large file - consider .gitignore
+- Official public release
+- Anonymized borrower information
+- Can be used for research/education
+- Large file - consider .gitignore
 
 ### German Credit Data
-- ✅ UCI ML Repository (public)
-- ✅ Academic research standard
-- ✅ No privacy concerns
+- UCI ML Repository (public)
+- Academic research standard
+- No privacy concerns
 
 ---
 
-## 📊 Data Statistics Summary
+## Data Statistics Summary
 
 | Dataset | Records | Size | Format | Real/Synthetic |
 |---------|---------|------|--------|---------------|
 | Sample (3 files) | 75 | < 1 MB | Multi | Synthetic |
-| Credit Card | 24K | 1.81 MB | CSV | ✅ Real |
-| Lending Club | 2.2M | 374 MB | CSV.gz | ✅ Real |
-| German Credit | 1K | < 0.1 MB | CSV | ✅ Real |
+| Credit Card | 24K | 1.81 MB | CSV | Real |
+| Lending Club | 2.2M | 374 MB | CSV.gz | Real |
+| German Credit | 1K | < 0.1 MB | CSV | Real |
 | **Total** | **2.2M+** | **~376 MB** | - | **Mostly Real** |
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Load Sample Data (Quick Test)
 ```bash
@@ -227,7 +227,7 @@ gunzip -k accepted_2007_to_2018Q4.csv.gz
 
 ---
 
-## 📚 References
+## References
 
 - **Credit Card Data**: Various public sources
 - **Lending Club**: https://www.lendingclub.com/
@@ -236,6 +236,6 @@ gunzip -k accepted_2007_to_2018Q4.csv.gz
 
 ---
 
-**Last Updated**: November 5, 2025  
-**Purpose**: Banking platform data migration demonstration  
+**Last Updated**: November 5, 2025 
+**Purpose**: Banking platform data migration demonstration 
 **Project**: Enterprise Banking Data Migration Engine

@@ -10,41 +10,41 @@ The Scala module demonstrates the Banking Platform Data Migration Engine's multi
 
 **Key Features**:
 - **Rule-based Fraud Detection**: 5 detection rules with weighted scoring
-  - High-value transactions (>$5,000): +25 points
-  - Unusual time (2 AM - 5 AM): +15 points
-  - High velocity (multiple transactions in 1 hour): +10-30 points
-  - Amount deviation (statistical analysis): +10-25 points
-  - New merchant detection: +10 points
+ - High-value transactions (>$5,000): +25 points
+ - Unusual time (2 AM - 5 AM): +15 points
+ - High velocity (multiple transactions in 1 hour): +10-30 points
+ - Amount deviation (statistical analysis): +10-25 points
+ - New merchant detection: +10 points
 
 - **Risk Level Classification**:
-  - CRITICAL: Score >= 80
-  - HIGH: Score >= 60
-  - MEDIUM: Score >= 40
-  - LOW: Score >= 20
-  - MINIMAL: Score < 20
+ - CRITICAL: Score >= 80
+ - HIGH: Score >= 60
+ - MEDIUM: Score >= 40
+ - LOW: Score >= 20
+ - MINIMAL: Score < 20
 
 - **Batch Analysis**: Analyzes multiple transactions with aggregate statistics
 
 **Transaction Case Class**:
 ```scala
 case class Transaction(
-  transactionId: String,
-  customerId: String,
-  amount: BigDecimal,
-  transactionDate: LocalDateTime,
-  merchantName: String,
-  merchantCategory: String,
-  location: String
+ transactionId: String,
+ customerId: String,
+ amount: BigDecimal,
+ transactionDate: LocalDateTime,
+ merchantName: String,
+ merchantCategory: String,
+ location: String
 )
 ```
 
 **Fraud Score Result**:
 ```scala
 case class FraudScore(
-  transactionId: String,
-  score: Double,
-  riskLevel: String,
-  triggeredRules: List[String]
+ transactionId: String,
+ score: Double,
+ riskLevel: String,
+ triggeredRules: List[String]
 )
 ```
 
@@ -104,14 +104,14 @@ The Scala module is designed to work alongside Java components in the banking pl
 
 ### Maven Plugins
 - **scala-maven-plugin**: 4.8.1
-  - Compiles Scala source files
-  - Runs ScalaTest unit tests
-  - Configured with deprecation warnings and feature warnings
-  
+ - Compiles Scala source files
+ - Runs ScalaTest unit tests
+ - Configured with deprecation warnings and feature warnings
+ 
 - **scalatest-maven-plugin**: 2.2.0
-  - Executes Scala tests
-  - Generates JUnit XML reports
-  - Integrates with Maven Surefire
+ - Executes Scala tests
+ - Generates JUnit XML reports
+ - Integrates with Maven Surefire
 
 ## Design Patterns
 
@@ -147,9 +147,9 @@ The Scala module is designed to work alongside Java components in the banking pl
 import org.apache.spark.ml.classification.RandomForestClassifier
 
 object FraudMLModel {
-  def trainModel(transactions: Dataset[Transaction]): RandomForestModel = {
-    // ML model training logic
-  }
+ def trainModel(transactions: Dataset[Transaction]): RandomForestModel = {
+ // ML model training logic
+ }
 }
 ```
 
@@ -159,13 +159,13 @@ object FraudMLModel {
 import akka.stream.scaladsl.{Source, Sink}
 
 object StreamingFraudDetection {
-  def analyzeStream(transactionStream: Source[Transaction, NotUsed]): Unit = {
-    transactionStream
-      .map(analyzeFraud)
-      .filter(_.riskLevel == "CRITICAL")
-      .to(Sink.foreach(alertFraud))
-      .run()
-  }
+ def analyzeStream(transactionStream: Source[Transaction, NotUsed]): Unit = {
+ transactionStream
+ .map(analyzeFraud)
+ .filter(_.riskLevel == "CRITICAL")
+ .to(Sink.foreach(alertFraud))
+ .run()
+ }
 }
 ```
 
@@ -173,9 +173,9 @@ object StreamingFraudDetection {
 ```scala
 // Potential integration with Neo4j/GraphX
 object FraudNetworkAnalysis {
-  def detectFraudRings(transactions: List[Transaction]): List[FraudRing] = {
-    // Graph-based fraud ring detection
-  }
+ def detectFraudRings(transactions: List[Transaction]): List[FraudRing] = {
+ // Graph-based fraud ring detection
+ }
 }
 ```
 
@@ -213,7 +213,7 @@ The Scala module enhances the Banking Platform Data Migration Engine with:
 
 ---
 
-**Author**: Banking Platform Team  
-**Version**: 1.0  
-**Date**: November 2024  
+**Author**: Banking Platform Team 
+**Version**: 1.0 
+**Date**: November 2024 
 **Total Scala LOC**: ~400 lines (production) + ~150 lines (tests)
