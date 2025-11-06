@@ -148,26 +148,32 @@ This project demonstrates **enterprise banking platform data migration capabilit
 
 ```
 BankFraudTest/
- src/
- main/
- java/com/bankfraud/
- ingestion/ # Data import modules
- normalization/ # Data standardization
- model/ # Domain models
- repository/ # Data access layer
- detection/ # Fraud detection engine
- analytics/ # Reporting and analytics
- aws/ # AWS integration
- util/ # Utilities
- resources/
- application.properties
- db/migration/ # Flyway SQL scripts
- scripts/ # Unix shell scripts
- test/ # Unit and integration tests
- data/
- sample/ # Sample datasets
- raw/ # Raw data files
- docs/ # Documentation
+├── src/
+│   ├── main/
+│   │   ├── java/com/bankfraud/       # Java source code
+│   │   │   ├── config/               # Configuration (HikariCP)
+│   │   │   ├── model/                # Domain models
+│   │   │   ├── reader/               # Data readers (CSV, JSON, etc.)
+│   │   │   ├── repository/           # Data access layer
+│   │   │   └── service/              # Business services
+│   │   ├── scala/com/bankfraud/      # Scala source code
+│   │   │   └── analytics/            # Fraud detection & statistics
+│   │   ├── resources/
+│   │   │   ├── application.properties
+│   │   │   └── db/migration/         # Flyway SQL scripts
+│   │   └── scripts/                  # Unix shell scripts
+│   └── test/                         # All test code (Java & Scala)
+├── docs/                             # Documentation
+│   ├── COMPLETION_SUMMARY.md         # Project metrics
+│   ├── SCALA_MODULE.md               # Scala implementation
+│   ├── TESTING.md                    # Test documentation
+│   └── CONTRIBUTING.md               # Development guide
+├── data/                             # Datasets
+│   ├── sample/                       # Sample data (CSV, JSON, TXT)
+│   └── README.md                     # Dataset documentation
+├── docker/                           # Docker configurations
+├── pom.xml                           # Maven configuration
+└── README.md                         # This file
  docker/ # Docker configurations
  pom.xml # Maven configuration
  PROJECT_PLAN.md # Detailed implementation plan
@@ -350,11 +356,11 @@ aws.rds.database=frauddb
 
 ## Documentation
 
-- **[PROJECT_PLAN.md](PROJECT_PLAN.md)** - Comprehensive implementation plan
-- **[docs/SETUP.md](docs/SETUP.md)** - Environment setup guide
-- **[docs/API_DESIGN.md](docs/API_DESIGN.md)** - API documentation
-- **[docs/DATA_SCHEMA.md](docs/DATA_SCHEMA.md)** - Database design
-- **[docs/AWS_DEPLOYMENT.md](docs/AWS_DEPLOYMENT.md)** - Cloud deployment guide
+- **[docs/COMPLETION_SUMMARY.md](docs/COMPLETION_SUMMARY.md)** - Project completion summary and metrics
+- **[docs/SCALA_MODULE.md](docs/SCALA_MODULE.md)** - Scala fraud detection implementation
+- **[docs/TESTING.md](docs/TESTING.md)** - Comprehensive testing documentation
+- **[docs/CONTRIBUTING.md](docs/CONTRIBUTING.md)** - Development and contribution guide
+- **[data/README.md](data/README.md)** - Dataset documentation
 
 ---
 
