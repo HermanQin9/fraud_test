@@ -106,9 +106,14 @@ class FraudAnalyzerTest extends AnyFunSuite with Matchers {
       location = "NY"
     )
     
+    // Multiple history transactions for better standard deviation calculation
     val history = List(
       analyzer.Transaction("TXN000", "CUST001", new BigDecimal("50.00"), 
-        LocalDateTime.of(2024, 1, 15, 3, 15), "Old Merchant", "Shopping", "NY")
+        LocalDateTime.of(2024, 1, 14, 10, 0), "Old Merchant", "Shopping", "NY"),
+      analyzer.Transaction("TXN001", "CUST001", new BigDecimal("45.00"), 
+        LocalDateTime.of(2024, 1, 13, 14, 0), "Old Merchant", "Shopping", "NY"),
+      analyzer.Transaction("TXN002", "CUST001", new BigDecimal("55.00"), 
+        LocalDateTime.of(2024, 1, 12, 16, 0), "Old Merchant", "Shopping", "NY")
     )
     
     val result = analyzer.analyzeFraud(transaction, history)
