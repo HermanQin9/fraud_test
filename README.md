@@ -1,24 +1,24 @@
-# 🏦 Enterprise Bank Fraud Detection & Data Pipeline System
+# 🏦 Banking Platform Data Migration & Normalization Engine
 
-[![Java](https://img.shields.io/badge/Java-17-orange.svg)](https://www.oracle.com/java/)
+[![Java](https://img.shields.io/badge/Java-21-orange.svg)](https://www.oracle.com/java/)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-15-blue.svg)](https://www.postgresql.org/)
 [![AWS](https://img.shields.io/badge/AWS-RDS%20%7C%20S3-orange.svg)](https://aws.amazon.com/)
 [![Maven](https://img.shields.io/badge/Maven-3.9+-red.svg)](https://maven.apache.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-> **A production-grade fraud detection system demonstrating enterprise data migration, normalization, and ingestion capabilities with AWS cloud integration.**
+> **Enterprise-grade ETL pipeline for migrating transaction data from multiple banking platforms into cloud-based PostgreSQL — demonstrating data normalization, ingestion, and AWS integration capabilities.**
 
 ## 📋 Project Overview
 
-This project simulates an **enterprise-level banking fraud detection system** with a focus on **data pipeline engineering**. It showcases the ability to migrate and normalize transaction data from multiple banking platforms into a centralized cloud-based PostgreSQL database, then perform real-time fraud detection and analytics.
+This project demonstrates **enterprise banking platform data migration capabilities** with a focus on **ETL pipeline engineering**. It showcases the ability to extract, normalize, and load transaction data from multiple banking systems with different formats into a centralized cloud-based PostgreSQL database.
 
 ### 🎯 Key Objectives
 
-- ✅ Implement **ETL pipelines** for multi-source data ingestion
-- ✅ Demonstrate **data normalization** and schema validation
-- ✅ Showcase **AWS cloud integration** (RDS, S3)
-- ✅ Build **scalable data processing** with Java and PostgreSQL
-- ✅ Apply **enterprise-grade coding practices** with comprehensive testing
+- ✅ Implement **multi-source data ingestion** from diverse banking platforms
+- ✅ Demonstrate **data normalization and standardization** across inconsistent schemas
+- ✅ Showcase **AWS cloud integration** (RDS PostgreSQL, S3)
+- ✅ Build **high-performance ETL pipelines** with Java and Unix utilities
+- ✅ Apply **enterprise-grade data engineering practices** with comprehensive testing
 
 ---
 
@@ -255,10 +255,10 @@ mvn test jacoco:report
 ## 🔄 Data Ingestion Pipeline
 
 ### Supported Data Sources
-1. **CSV Files** - Bank A format
-2. **JSON Files** - Bank B format
-3. **AWS S3** - Cloud storage integration
-4. **Legacy Database Exports** - XML format
+1. **Real Credit Card Transactions** - 24K+ real anonymized transactions
+2. **Lending Club Loan Data** - 2.2M+ real P2P loans (2007-2018)
+3. **German Credit Dataset** - 1K real credit applications
+4. **Multi-Format Sample Data** - CSV, JSON, Fixed-width formats
 
 ### Pipeline Workflow
 ```java
@@ -399,13 +399,23 @@ This project showcases the following technical competencies:
 
 ---
 
-## 🎓 Learning Resources
+## 🎓 Data Sources
 
-This project was built using knowledge from:
-- [PostgreSQL Documentation](https://www.postgresql.org/docs/)
-- [AWS SDK for Java Developer Guide](https://docs.aws.amazon.com/sdk-for-java/)
-- [Effective Java by Joshua Bloch](https://www.oreilly.com/library/view/effective-java/9780134686097/)
-- [Kaggle Credit Card Fraud Detection Dataset](https://www.kaggle.com/mlg-ulb/creditcardfraud)
+This project uses **real-world financial datasets**:
+
+### Primary Dataset
+- **Credit Card Transactions** (1.81 MB, 24K+ transactions)
+  - Real anonymized credit card transaction data
+  - Time period: 2002-2005
+  - Includes merchant details, amounts, fraud indicators
+  - Perfect size for demonstration and GitHub
+
+### Additional Datasets
+- **Lending Club** - 2.2M+ real P2P loans (374 MB compressed)
+- **German Credit** - 1K real credit applications (UCI ML)
+- **Multi-format samples** - CSV, JSON, Fixed-width for testing
+
+All datasets are publicly available and properly anonymized.
 
 ---
 
